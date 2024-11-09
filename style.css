@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* font-family: "Outfit", sans-serif; 
+300 400 600 */
+
+:root{
+    --soft-blue:hsl(215, 51%, 70%);
+    --cyan:hsl(178, 100%, 50%);
+
+    --dark-blue-mainbg:hsl(217, 54%, 11%);
+    --dark-blue-cardbg:hsl(216, 50%, 16%);
+    --dark-blue-line:hsl(215, 32%, 27%);
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color: var(--dark-blue-mainbg);
+    font-family: "Outfit",sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-wrapper{
+    background-color: var(--dark-blue-cardbg);
+    width:310px;
+    padding:1.3rem;
+    border-radius: 12px;
+    box-shadow: 0 12px 25px -10px black;
+}
+
+.card-img{
+    text-align: center;
+    margin: 0 auto;
+    position:relative;
+}
+
+.card-img img{
+    width:270px;
+    border-radius: 10px;
+}
+
+.card-name{
+    color:white;
+    font-size:.8rem;
+}
+
+.card-description{
+    color:var(--soft-blue);
+    line-height: 24px;
+}
+
+.card-value {
+    justify-content: space-between;
+    padding-bottom: 1em;
+    border-bottom: 2px solid var(--dark-blue-line);
+}
+
+.left p{
+    color:var(--cyan);
+}
+
+.right p{
+    color:var(--soft-blue);
+}
+
+.card-value p{
+    margin-left:.6em;
+}
+
+.right,
+.left,
+.card-value{
+    display:flex;
+}
+
+.card-name,
+.card-description,
+.card-value{
+    margin: 1.5em 0;
+}
+
+.card-author{
+    display:flex;
+    align-items: center;
+}
+
+.card-author img{
+    width:25px;
+    margin-right:1em;
+    border:1px solid white;
+    border-radius: 20px;
+}
+
+.card-author p{
+    color:var(--soft-blue);
+    font-size:.95rem;
+}
+
+.card-author span{
+    color: white;
+}
+
+.overlay{
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    border-radius: 10px;
+    background-color: var(--cyan);
+    opacity: 0;
+}
+
+.view{
+    position: absolute;
+    top:0;
+    bottom:0;
+    right: 0;
+    left:0;
+    transform:scale(.2);
+    opacity: 0;
+    transition: all ease .2s;
+}
+
+.card-img:hover .view,
+.card-img:hover .overlay{
+    opacity: .5;
+    cursor: pointer;
+}
+
+.card-name:hover,
+.card-author span:hover{
+    color:var(--cyan);
+    cursor:pointer;
+}
